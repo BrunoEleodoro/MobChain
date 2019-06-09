@@ -135,7 +135,7 @@ class _HomePageState extends State<HomePage> {
                     flex: 6,
                     child: GestureDetector(
                       onTap: () {
-                        Navigator.pushNamed(context, '/transferirSaldo');
+                        Navigator.pushNamed(context, '/carregarCartao');
                       },
                       child: Container(
                           height: 150,
