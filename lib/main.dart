@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_nfc_reader/flutter_nfc_reader.dart';
 import 'pages/home.dart';
 import 'pages/login.dart';
-import 'pages/listarPessoas.dart';
+import 'pages/listar_pessoas.dart';
+import 'pages/transferir_saldo.dart';
 
 void main() => runApp(MyApp());
 
@@ -22,6 +23,7 @@ class MyApp extends StatelessWidget {
       routes: <String, WidgetBuilder> { //5
         '/home': (BuildContext context) => new HomePage(),
         '/listarPessoas': (BuildContext context) => new ListarPessoasPage(),
+        '/transferirSaldo': (BuildContext context) => new TransferirSaldo(),
       },
     );
   }

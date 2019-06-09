@@ -36,7 +36,7 @@ class _ListarPessoasPageState extends State<ListarPessoasPage> {
                     itemBuilder: (BuildContext context, int index) {
                       return ListTile(
                         onTap: (){
-
+                          Navigator.pushNamed(context, '/transferirSaldo');
                         },
                         leading: CircleAvatar(
                           child: Icon(Icons.person),
