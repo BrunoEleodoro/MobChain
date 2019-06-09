@@ -10,9 +10,9 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
         body: SingleChildScrollView(
-          child: Stack(children: <Widget>[
-      Container(
-            height: 350,
+      child: Stack(children: <Widget>[
+        Container(
+            height: 300,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.only(
                   bottomLeft: Radius.circular(20),
@@ -30,8 +30,8 @@ class _HomePageState extends State<HomePage> {
                 ],
               ),
             )),
-      Container(
-          margin: EdgeInsets.only(top: 50, left: 37),
+        Container(
+          margin: EdgeInsets.only(top: 30, left: 37),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -39,23 +39,30 @@ class _HomePageState extends State<HomePage> {
               Padding(
                 padding: const EdgeInsets.only(top: 18.0),
                 child: Text(
-                  'Fulano de tal',
+                  'Anna Flávia',
                   style: TextStyle(color: Colors.white, fontSize: 18),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(top: 14.0),
+                child: Text(
+                  '173217781372',
+                  style: TextStyle(color: Colors.white, fontSize: 14),
                 ),
               ),
               Padding(
                 padding: const EdgeInsets.only(top: 18.0),
                 child: Text(
-                  '173217781372',
+                  'Cartão 660 735 810',
                   style: TextStyle(color: Colors.white, fontSize: 18),
                 ),
               )
             ],
           ),
-      ),
-      Center(
+        ),
+        Center(
           child: Container(
-            margin: EdgeInsets.only(top: 220, bottom: 20, left: 20, right: 20),
+            margin: EdgeInsets.only(top: 180, bottom: 20, left: 20, right: 20),
             width: double.maxFinite,
             height: 230,
             child: Card(
@@ -68,7 +75,8 @@ class _HomePageState extends State<HomePage> {
                       padding: const EdgeInsets.only(top: 40.0),
                       child: Text(
                         'R\$ 54,20',
-                        style: TextStyle(color: Color(0XFFFA6423), fontSize: 40),
+                        style:
+                            TextStyle(color: Color(0XFFFA6423), fontSize: 40),
                       ),
                     ),
                   ),
@@ -82,27 +90,32 @@ class _HomePageState extends State<HomePage> {
                       style: TextStyle(fontSize: 14),
                     ),
                   )),
-                  Align(
-                    alignment: Alignment.center,
-                    child: Padding(
-                      padding:
-                          const EdgeInsets.only(top: 40.0, left: 10, right: 10),
-                      child: Text(
-                        'Ver histórico de recargas',
-                        textAlign: TextAlign.center,
-                        style: TextStyle(color: Color(0XFFFA6423)),
-                      ),
+                  Divider(),
+                  Padding(
+                    padding: const EdgeInsets.only(top:8.0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: <Widget>[
+                        Icon(Icons.show_chart, size: 30,color: Color(0XFFFA6423),),
+                        Align(
+                          alignment: Alignment.center,
+                          child:Text(
+                              'Ver histórico de recargas',
+                              textAlign: TextAlign.center,
+                              style: TextStyle(color: Color(0XFFFA6423)),
+                          ),
+                        ),
+                        Container(child: Image.asset('assets/right-arrow.png', color: Color(0XFFFA6423),),height: 20,)
+                      ],
                     ),
-                  ),
+                  )
                 ],
               ),
             ),
           ),
-      ),
-      SizedBox(
-          height: 40,
-      ),
-      Column(
+        ),
+        Column(
           children: <Widget>[
 //            Container(
 //              width: double.maxFinite,
@@ -115,55 +128,64 @@ class _HomePageState extends State<HomePage> {
 //              ),
 //            ),
             Padding(
-                padding: const EdgeInsets.only(top: 480,left: 20, right: 20),
-                child: Row(
-                  children: <Widget>[
-                    Expanded(
-                      flex: 6,
-                      child: GestureDetector(
-                        onTap: () {
-                          Navigator.pushNamed(context, '/listarPessoas');
-                        },
-                        child: Container(
-                            height: 150,
-                            child: Card(
-                              elevation: 2,
-                              child: Center(
-                                child: Icon(
-                                  Icons.insert_emoticon,
-                                  size: 70,
-                                  color: Theme.of(context).colorScheme.primary,
-                                ),
-                              ),
-                            )),
-                      ),
+              padding: const EdgeInsets.only(top: 420, left: 20, right: 20),
+              child: Row(
+                children: <Widget>[
+                  Expanded(
+                    flex: 6,
+                    child: GestureDetector(
+                      onTap: () {
+                        Navigator.pushNamed(context, '/listarPessoas');
+                      },
+                      child: Container(
+                          height: 150,
+                          child: Card(
+                            elevation: 2,
+                            child: Center(
+                              child: Column(
+                                children: <Widget>[
+                                  SizedBox(height: 20,),
+                                  Container(
+                                    height: 70,
+                                      child: Image.asset('assets/credit-card.png', color: Color(0XFFFA6423),)),
+                                  SizedBox(height: 10,),
+                                  Text('Carregar bilhete', style: TextStyle(color: Color(0XFFFA6423)),)
+                                ],
+                              )
+                            ),
+                          )),
                     ),
-                    Expanded(
-                      flex: 6,
-                      child: GestureDetector(
-                        onTap: () {
-                          Navigator.pushNamed(context, '/carregarCartao');
-                        },
-                        child: Container(
-                            height: 150,
-                            child: Card(
-                              elevation: 2,
-                              child: Center(
-                                child: Icon(
-                                  Icons.insert_emoticon,
-                                  size: 70,
-                                  color: Theme.of(context).colorScheme.primary,
-                                ),
-                              ),
-                            )),
-                      ),
-                    )
-                  ],
-                ),
+                  ),
+                  Expanded(
+                    flex: 6,
+                    child: GestureDetector(
+                      onTap: () {
+                        Navigator.pushNamed(context, '/carregarCartao');
+                      },
+                      child: Container(
+                          height: 150,
+                          child: Card(
+                            elevation: 2,
+                            child: Center(
+                                child: Column(
+                                  children: <Widget>[
+                                    SizedBox(height: 20,),
+                                    Container(
+                                        height: 70,
+                                        child: Image.asset('assets/money-transfer.png', color: Color(0XFFFA6423),)),
+                                    SizedBox(height: 10,),
+                                    Text('Transferir crédito', style: TextStyle(color: Color(0XFFFA6423)),)
+                                  ],
+                                )
+                            ),
+                          )),
+                    ),
+                  ),
+                ],
               ),
-            SizedBox(
-              height: 20,
             ),
+            Padding(padding: EdgeInsets.only(top: 30),
+            child: Text('Reportar perda ou extravio do cartão', style: TextStyle( decoration: TextDecoration.underline,color: Color(0XFFFA6423)),),)
 //            Row(
 //              children: <Widget>[
 //                Expanded(
@@ -185,8 +207,8 @@ class _HomePageState extends State<HomePage> {
 //              ],
 //            )
           ],
-      ),
-    ]),
-        ));
+        ),
+      ]),
+    ));
   }
 }
