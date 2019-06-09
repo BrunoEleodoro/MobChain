@@ -54,18 +54,23 @@ class _HomePageState extends State<HomePage> {
                     ),
                     Expanded(
                       flex: 6,
-                      child: Container(
-                          height: 150,
-                          child: Card(
-                            child: Center(
-                              child: Icon(
-                                Icons.monetization_on,
-                                size: 70,
-                                color: Theme.of(context).colorScheme.primary,
+                      child: GestureDetector(
+                        onTap: () {
+                          Navigator.pushNamed(context, '/carregarCartao');
+                        },
+                        child: Container(
+                            height: 150,
+                            child: Card(
+                              child: Center(
+                                child: Icon(
+                                  Icons.monetization_on,
+                                  size: 70,
+                                  color: Theme.of(context).colorScheme.primary,
+                                ),
                               ),
-                            ),
-                          )),
-                    ),
+                            )),
+                      ),
+                    )
                   ],
                 ),
                 SizedBox(

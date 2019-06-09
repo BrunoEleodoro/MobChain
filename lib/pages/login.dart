@@ -48,7 +48,7 @@ class _LoginPageState extends State<LoginPage> {
                           width: double.maxFinite,
                           child: RaisedButton.icon(
                               onPressed: () {
-                                Navigator.pushNamed(context, '/home');
+                                Navigator.pushReplacementNamed(context, '/home');
                               },
                               icon: Icon(Icons.navigate_next),
                               label: Text('FAZER LOGIN')),

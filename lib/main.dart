@@ -4,6 +4,7 @@ import 'pages/home.dart';
 import 'pages/login.dart';
 import 'pages/listar_pessoas.dart';
 import 'pages/transferir_saldo.dart';
+import 'pages/carregar_cartao.dart';
 
 void main() => runApp(MyApp());
 
@@ -24,6 +25,7 @@ class MyApp extends StatelessWidget {
         '/home': (BuildContext context) => new HomePage(),
         '/listarPessoas': (BuildContext context) => new ListarPessoasPage(),
         '/transferirSaldo': (BuildContext context) => new TransferirSaldo(),
+        '/carregarCartao': (BuildContext context) => new CarregarCartao(),
       },
     );
   }

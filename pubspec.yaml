@@ -27,6 +27,7 @@ dependencies:
     git:
       url: git://github.com/matteocrippa/flutter-nfc-reader.git
       ref: master
+  flutter_masked_text: ^0.8.0
 
 dev_dependencies:
   flutter_test:

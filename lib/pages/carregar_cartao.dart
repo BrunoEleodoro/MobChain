@@ -1,19 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_masked_text/flutter_masked_text.dart';
 
-class TransferirSaldo extends StatefulWidget {
+class CarregarCartao extends StatefulWidget {
   @override
-  _TransferirSaldoState createState() => _TransferirSaldoState();
+  _CarregarCartaoState createState() => _CarregarCartaoState();
 }
 
-class _TransferirSaldoState extends State<TransferirSaldo> {
+class _CarregarCartaoState extends State<CarregarCartao> {
   var controller = new MoneyMaskedTextController(decimalSeparator: ',', leftSymbol: 'R\$');
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text('Transferir saldo'),
+          title: Text('Carregar cartao'),
         ),
         body: Padding(
           padding: const EdgeInsets.all(8.0),
@@ -37,8 +37,8 @@ class _TransferirSaldoState extends State<TransferirSaldo> {
                       Navigator.of(context)
                           .pushNamedAndRemoveUntil('/home', (Route<dynamic> route) => false);
                     },
-                    icon: Icon(Icons.forward),
-                    label: Text('TRANSFERIR')),
+                    icon: Icon(Icons.payment),
+                    label: Text('CARREGAR')),
               ],
             ),
           ),
