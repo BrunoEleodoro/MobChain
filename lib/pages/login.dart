@@ -23,6 +23,23 @@ class _LoginPageState extends State<LoginPage> {
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: <Widget>[
+                      Padding(
+                        padding: const EdgeInsets.only(left: 20.0),
+                        child: Row(
+                          children: <Widget>[
+                            Text(
+                              'Passe',
+                              style: TextStyle(
+                                  fontSize: 30, color: Color(0XFF15CCEA)),
+                            ),
+                            Text('Digital',
+                                style: TextStyle(
+                                    fontSize: 30,
+                                    color:
+                                        Theme.of(context).colorScheme.primary))
+                          ],
+                        ),
+                      ),
                       Container(
                         margin: EdgeInsets.only(bottom: 40),
                         height: 300,
