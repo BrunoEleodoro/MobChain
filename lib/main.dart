@@ -16,8 +16,8 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'MobChain',
       theme: ThemeData(
-        brightness: Brightness.dark,
         primarySwatch: Colors.orange,
+        accentColor: Colors.orange,
 //        primaryColor: Colors.orange
       ),
       home: LoginPage(),
