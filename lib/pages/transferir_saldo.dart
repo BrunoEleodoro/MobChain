@@ -41,36 +41,46 @@ class _TransferirSaldoState extends State<TransferirSaldo> {
               ],
             ),
           )),
-      Center(
-        child: Padding(
-          padding: const EdgeInsets.only(top: 70.0),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: <Widget>[
-              Text(
+      Padding(
+        padding: const EdgeInsets.only(top: 70.0),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            IconButton(
+              icon: Icon(Icons.arrow_back),
+              onPressed: () {
+                Navigator.pop(context);
+              },
+            ),
+            Container(
+              width: double.maxFinite,
+              child: Text(
                 'Quanto você quer transferir?',
                 style: TextStyle(color: Colors.white, fontSize: 20),
+                textAlign: TextAlign.center,
               ),
-              SizedBox(
-                height: 30,
+            ),
+            SizedBox(
+              height: 20,
+            ),
+            Container(
+              width: double.maxFinite,
+              child: TextFormField(
+                controller: controller,
+                style: TextStyle(fontSize: 40, color: Colors.white),
+                textAlign: TextAlign.center,
+                decoration: InputDecoration(border: InputBorder.none),
               ),
-              Container(
-                width: double.maxFinite,
-                child: TextFormField(
-                  controller: controller,
-                  style: TextStyle(fontSize: 40, color: Colors.white),
-                  textAlign: TextAlign.center,
-                  decoration: InputDecoration(border: InputBorder.none),
-                ),
-              ),
-              SizedBox(
-                height: 20,
-              ),
-              Text(
+            ),
+            Container(
+              width: double.maxFinite,
+              child: Text(
                 'Total indisponível: R\$ 54,20',
                 style: TextStyle(color: Colors.white, fontSize: 16),
+                textAlign: TextAlign.center,
               ),
+            ),
 //            RaisedButton.icon(
 //                onPressed: () {
 //                  Navigator.of(context).pushNamedAndRemoveUntil(
@@ -78,8 +88,7 @@ class _TransferirSaldoState extends State<TransferirSaldo> {
 //                },
 //                icon: Icon(Icons.forward),
 //                label: Text('TRANSFERIR')),
-            ],
-          ),
+          ],
         ),
       ),
       Padding(
@@ -114,7 +123,6 @@ class _TransferirSaldoState extends State<TransferirSaldo> {
                 padding: const EdgeInsets.only(left: 22.0, bottom: 22),
                 child: Container(
                   height: 180,
-                  margin: EdgeInsets.only(bottom: 30),
                   child: ListView.builder(
                       shrinkWrap: true,
                       scrollDirection: Axis.horizontal,
@@ -124,7 +132,6 @@ class _TransferirSaldoState extends State<TransferirSaldo> {
                           margin: EdgeInsets.all(2),
                           width: 180,
                           height: 120,
-
                           child: Card(
                             elevation: 5,
                             child: Center(
@@ -133,20 +140,81 @@ class _TransferirSaldoState extends State<TransferirSaldo> {
                                 crossAxisAlignment: CrossAxisAlignment.center,
                                 children: <Widget>[
                                   CircleAvatar(
-                                    radius:35,
-                                    backgroundColor: Theme.of(context).colorScheme.primary,
-                                    child: Text(mockData[index]['nome'][0]
-                                        .toUpperCase(), style: TextStyle(fontSize: 25, color: Colors.white),),
+                                    radius: 35,
+                                    backgroundColor:
+                                        Theme.of(context).colorScheme.primary,
+                                    child: Text(
+                                      mockData[index]['nome'][0].toUpperCase(),
+                                      style: TextStyle(
+                                          fontSize: 25, color: Colors.white),
+                                    ),
                                   ),
-                                  SizedBox(height: 20,),
-                                  Text(mockData[index]['nome'], style: TextStyle(fontSize: 14, color: Color(0XFFFA6423)),),
+                                  SizedBox(
+                                    height: 20,
+                                  ),
+                                  Text(
+                                    mockData[index]['nome'],
+                                    style: TextStyle(
+                                        fontSize: 14, color: Color(0XFFFA6423)),
+                                  ),
                                 ],
                               ),
                             ),
                           ),
                         );
                       }),
-                ))
+                )),
+            Center(
+              child: Container(
+                width: 300,
+                child: Card(
+                  elevation: 5,
+                  child: Padding(
+                    padding: const EdgeInsets.all(10.0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: <Widget>[
+                        Container(
+                          height: 40,
+                          child: Image.asset(
+                            'assets/plus.png',
+                            color: Color(0XFFFA6423),
+                          ),
+                        ),
+                        Text(
+                          'Adicionar novo contato',
+                          style: TextStyle(
+                              fontSize: 14, color: Color(0XFFFA6423)),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+            ),
+            SizedBox(height: 20,),
+            Center(
+              child: Container(
+//                margin: EdgeInsets.only(bottom: 100),
+                  width: 300,
+                  height: 50,
+                  decoration: BoxDecoration(
+                      gradient: LinearGradient(colors: [
+                        Color(0XFF15CCEA),
+                        Color(0XFF65D7A0),
+                      ]),
+                      borderRadius: BorderRadius.all(Radius.circular(3))),
+                  child: InkWell(
+                    onTap: () {
+                      Navigator.pushReplacementNamed(context, '/home');
+                    },
+                    child: Center(
+                        child: Text(
+                      'Transferir',
+                      style: TextStyle(color: Colors.white),
+                    )),
+                  )),
+            ),
 //            RaisedButton.icon(
 //                onPressed: () {
 //                  Navigator.of(context).pushNamedAndRemoveUntil(

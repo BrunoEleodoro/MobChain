@@ -74,7 +74,7 @@ class _HomePageState extends State<HomePage> {
                     child: Padding(
                       padding: const EdgeInsets.only(top: 40.0),
                       child: Text(
-                        'R\$ 54,20',
+                        'R\$ 34,00',
                         style:
                             TextStyle(color: Color(0XFFFA6423), fontSize: 40),
                       ),
@@ -85,7 +85,7 @@ class _HomePageState extends State<HomePage> {
                     padding:
                         const EdgeInsets.only(top: 20.0, left: 20, right: 20),
                     child: Text(
-                      'Última recarga em 07/06 no \nvalor de R\$ 52,00',
+                      'Você fez uma transferência em 09/06\nno valor de R\$ 20,00 para Anna Flávia',
                       textAlign: TextAlign.center,
                       style: TextStyle(fontSize: 14),
                     ),
@@ -101,7 +101,7 @@ class _HomePageState extends State<HomePage> {
                         Align(
                           alignment: Alignment.center,
                           child:Text(
-                              'Ver histórico de recargas',
+                              'Ver histórico de transacões',
                               textAlign: TextAlign.center,
                               style: TextStyle(color: Color(0XFFFA6423)),
                           ),
@@ -135,7 +135,7 @@ class _HomePageState extends State<HomePage> {
                     flex: 6,
                     child: GestureDetector(
                       onTap: () {
-                        Navigator.pushNamed(context, '/listarPessoas');
+                        Navigator.pushNamed(context, '/transferirSaldo');
                       },
                       child: Container(
                           height: 150,
@@ -160,7 +160,7 @@ class _HomePageState extends State<HomePage> {
                     flex: 6,
                     child: GestureDetector(
                       onTap: () {
-                        Navigator.pushNamed(context, '/carregarCartao');
+                        Navigator.pushNamed(context, '/transferirSaldo');
                       },
                       child: Container(
                           height: 150,
